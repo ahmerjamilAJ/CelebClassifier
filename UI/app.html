@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+    <style>
+        body {
+            background-color: #010120;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+
+        .navbar-brand {
+            color: #480370 !important;
+
+            
+        }
+
+        .card {
+            background-color: #000000;
+            border: 2px solid #f8f9fa;
+        }
+
+        .card-title {
+            color: #f8f9fa;
+        }
+
+        .dz-message {
+            background-color: #000000;
+            border: 2px dashed #f8f9fa;
+            color: #f8f9fa;
+        }
+
+        .btn-success {
+            background-color: #f8f9fa;
+            border: none;
+            color: #333333;
+        }
+
+        #error {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+        #classTable {
+            background-color: #000000;
+            color: #f8f9fa;
+        }
+
+        #classTable th {
+            border: 2px solid #f8f9fa;
+        }
+
+        #classTable td {
+            border: 1px solid #f8f9fa;
+        }
+
+        .custom-circle-image {
+            border: 2px solid #f8f9fa;
+        }
+        .CCcontainer {
+        width: 90%;
+        height: 5%;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .CCcontainer2 {
+        width: 90%;
+        height: 10%;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#" style="font-weight:bold;font-size:70px;">Celebrity Classifier</a>
+    </nav>
+
+    <div class="CCcontainer" >
+        <div class="row">
+            <div class="col card-wrapper">
+                <div class="row">
+                    <!-- JavaScript Loop Starts -->
+                    <!-- Assuming you have an array of player objects called 'players' -->
+                    <!-- Modify the 'players' array as per your data structure -->
+                    <script>
+                        // Sample 'players' array containing player objects
+                        var players = [
+                            { name: 'Angeline_Joulie', image: './images/angie.jpg' },
+                            { name: 'Brad_Pitt', image: './images/brad.jpg' },
+                            { name: 'Tom_Cruise', image: './images/cruise.jpg' },
+                            { name: 'Denzel_Washington', image: './images/denzel.jpg' },
+                            { name: 'Hugh_Jackman', image: './images/hugh.jpg' },
+                            { name: 'Robert_Downey', image: './images/Iron.jpg' },
+                            { name: 'Jennifer_Lawrence', image: './images/jen.jpg' },
+                            { name: 'Tom_Hanks', image: './images/Tom.jpg' },
+                            // Add more player objects here
+                            // { name: 'Player Name', image: './images/player.jpg' }
+                        ];
+    
+                        // Loop through the 'players' array
+                        for (var i = 0; i < players.length; i++) {
+                            var player = players[i];
+                            document.write(`
+                                <div class="col card-wrapper" data-player="${player.name}">
+                                    <div class="card" style="width:110%;height:110%;">
+                                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image" style="width:100%;">
+                                            <img class="w-100 h-100" src="${player.image}" alt="Card image cap">
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="text-uppercase card-title" style="font-size:18px;">${player.name}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                    <!-- JavaScript Loop Ends -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CCcontainer">
+        <div class="row">
+            <div class="col card-wrapper">
+                <div class="row">
+                    <!-- JavaScript Loop Starts -->
+                    <!-- Assuming you have an array of player objects called 'players' -->
+                    <!-- Modify the 'players' array as per your data structure -->
+                    <script>
+                        // Sample 'players' array containing player objects
+                        var players = [
+                            { name: 'Johny_Depp', image: './images/jhonny.jpg' },
+                            { name: 'Kate_Winslet', image: './images/Kate.jpg' },
+                            { name: 'Leonardo_Di_Caprio', image: './images/Leo.jpg' },
+                            { name: 'Megan_Fox', image: './images/Megan.jpg' },
+                            { name: 'Natlie_Portman', image: './images/Natlie.jpg' },
+                            { name: 'Nicole_Kidman', image: './images/Nicole.jpg' },
+                            { name: 'Sandra_Bullock', image: './images/sandra.jpg' },
+                            { name: 'Scarlet_Johanson', image: './images/scarlet.jpg' },
+                            { name: 'Will_Smith', image: './images/Will.jpg' },
+                            // Add more player objects here
+                            // { name: 'Player Name', image: './images/player.jpg' }
+                        ];
+    
+                        // Loop through the 'players' array
+                        for (var i = 0; i < players.length; i++) {
+                            var player = players[i];
+                            document.write(`
+                                <div class="col card-wrapper" data-player="${player.name}">
+                                    <div class="card" style="width:110%;height:110%;">
+                                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image" style="width:100%;" >
+                                            <img class="w-100 h-100" src="${player.image}" alt="Card image cap">
+                                        </div>
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="text-uppercase card-title" style="font-size:18px;">${player.name}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                    <!-- JavaScript Loop Ends -->
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <div class="CCcontainer2">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row justify-content-center" >
+                    <div class="col-10" style="background-color: lightblue;">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message text-center" style="background-color: lightblue;">
+                                <!-- <img src="./images/upload.png" width="50vw" height="50vw" alt="Upload icon"><br> -->
+                                <span class="note">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 error" id="error">
+                        <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>
+                    </div>
+                </div>
+    
+                <div class="row justify-content-center" style="width: 300px;height: 300px;margin-left: 200px;">
+                    <div class="col-sm-8" id="resultHolder"></div>
+                </div>
+    
+                <div class="row justify-content-center" style="margin-top:10%;">
+                    <div class="col-sm-8" id="divClassTable">
+                        <!-- <table id="classTable" class="table">
+                            <tr>
+                                <th>Player</th>
+                                <th>Probability Score</th>
+                            </tr>
+                            <tr>
+                                <td>Angelina Jolie</td>
+                                <td id="score_Angelina_Jolie"></td>
+                            </tr>
+                            <tr>
+                                <td>Brad Pitt</td>
+                                <td id="score_Brad_Pitt"></td>
+                            </tr>
+                            <tr>
+                                <td>Denzel Washington</td>
+                                <td id="score_Denzel_Washington"></td>
+                            </tr>
+                            <tr>
+                                <td>Hugh Jackman</td>
+                                <td id="score_Hugh_Jackman"></td>
+                            </tr>
+                            Repeat for other players
+                        </table> -->
+                        <table id="classTable" class="table">
+                            <tr>
+                                <th>Player</th>
+                                <th>Probability Score</th>
+                                <th>Player</th>
+                                <th>Probability Score</th>
+                            </tr>
+                            <tr>
+                                <td>Angelina Jolie</td>
+                                <td id="score_Angelina_Jolie"></td>
+                                <td>Brad Pitt</td>
+                                <td id="score_Brad_Pitt"></td>
+                            </tr>
+                            <tr>
+                                <td>Denzel Washington</td>
+                                <td id="score_Denzel_Washington"></td>
+                                <td>Hugh Jackman</td>
+                                <td id="score_Hugh_Jackman"></td>
+                            </tr>
+                            <tr>
+                                <td>Jennifer Lawrence</td>
+                                <td id="score_Jennifer_Lawrence"></td>
+                                <td>Johnny Depp</td>
+                                <td id="score_Johnny_Depp"></td>
+                            </tr>
+                            <tr>
+                                <td>Kate Winslet</td>
+                                <td id="score_Kate_Winslet"></td>
+                                <td>Leonardo</td>
+                                <td id="score_Leonardo_DiCaprio"></td>
+                            </tr>
+                            <tr>
+                                <td>Megan Fox</td>
+                                <td id="score_Megan_Fox"></td>
+                                <td>Natalie Portman</td>
+                                <td id="score_Natalie_Portman"></td>
+                            </tr>
+                            <tr>
+                                <td>Nicole Kidman</td>
+                                <td id="score_Nicole_Kidman"></td>
+                                <td>Robert Downey</td>
+                                <td id="score_Robert_Downey_Jr"></td>
+                            </tr>
+                            <tr>
+                                <td>Sandra Bullock</td>
+                                <td id="score_Sandra_Bullock"></td>
+                                <td>Scarlett Johansson</td>
+                                <td id="score_Scarlett_Johansson"></td>
+                            </tr>
+                            <tr>
+                                <td>Tom Cruise</td>
+                                <td id="score_Tom_Cruise"></td>
+                                <td>Tom Hanks</td>
+                                <td id="score_Tom_Hanks"></td>
+                            </tr>
+                            <tr>
+                                <td>Will Smith</td>
+                                <td id="score_Will_Smith"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <!-- Repeat for other players -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./dropzone.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
